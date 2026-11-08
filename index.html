@@ -1,0 +1,371 @@
+
+
+
+
+
+
+(ANONIMOS, 1869)
+UNIVERSIDAD AUTÓNOMA DE SANTO DOMINGO (UASD)
+Facultad: Ciencias
+Escuela: Informática
+Carrera: Licenciatura en Informática
+TAREA 3: INVESTIGACIÓN SOBRE AJAX Y SU FUNCIONAMIENTO
+Asignatura: Laboratorio de Lenguaje de Programación III
+Docente: Radhamés Silverio González
+Estudiante: Bienvenido Quezada Alcántara
+Matrícula: BD6436
+Lugar: Santo Domingo, República Dominicana
+Fecha: 24 de octubre de 2026
+
+
+
+Introducción:
+
+El desarrollo web ha evolucionado considerablemente gracias a las tecnologías que 
+Permiten crear páginas más rápidas, interactivas y fáciles de utilizar. 
+Entre estas tecnologías se Encuentra AJAX, una técnica de programación que permite
+intercambiar información entre una Página web y un servidor sin necesidad
+de recargar el documento completo. 
+AJAX ha contribuido al desarrollo de aplicaciones web modernas porque facilita la 
+Actualización de contenidos, la búsqueda de información, la validación de formularios y la carga 
+Dinámica de datos. Aunque su nombre hace referencia a XML, actualmente es común utilizar 
+JSON como formato de intercambio de información. 
+El objetivo de esta investigación es explicar qué es AJAX, cuál es su propósito, cómo 
+Funciona, qué relación tiene con javascript, el navegador y el servidor, así como sus ventajas, Desventajas y principales aplicaciones. También se presenta un ejemplo practico que permite comprender su funcionamiento.
+. 
+                   Desarrollo :
+1.	¿Qué es AJAX? 
+AJAX significa Asynchronous javascript and XML, que en español se traduce como Javascript asíncrono y XML. Es una técnica de desarrollo web que permite a una pagina  solicitar y recibir información de un servidor de asíncrona, actualizando una parte de su contenido sin tener que recargar toda la pagina  (MDN Web Docs, s. F.-a). AJAX no es un lenguaje de programación independiente ni un programa que se instala. Es una técnica que combina tecnología web, principalmente HTML, CSC, javascript y mecanismo de comunicación mediante HTTP Aunque inicialmente Aunque inicialmente se utilizaba XML para inter para intercambiar información, hoy en día 3 también se emplean formatos como JSON y texto. Por esa razón, el nombre AJAX se mantiene, aunque no siempre se utiliza XML. . Por ejemplo, cuando una página muestra los datos de un usuario después de pulsar un botón, sin volver a cargar todo el sitio, puede estar utilizando AJAX.
+
+1.	¿Cuál es el propósito de AJAX? El propósito principal de AJAX es mejorar la interacción entre el usuario y una aplicación web, permitiendo que la información se solicite al servidor y se muestre cuando sea necesaria, sin recargar el documento completo. Sus objetivos principales son:
+
+o	Mejorar la experiencia del usuario: permite interactuar con la página de forma más fluida.
+o	Actualizar partes específicas: modifica solamente el contenido que necesita cambiar.
+•	Reducir transferencias innecesarias: puede evitar que se descargue nuevamente toda la página en cada operación. 
+•	Facilitar la comunicación con el servidor: permite solicitar, enviar y recibir información. 
+•	Crear aplicaciones dinámicas: facilita funciones como búsquedas, notificaciones, formularios y listas de resultados. Sin embargo, AJAX no garantiza que todas las aplicaciones sean más rápidas. 
+•	El resultado depende de la conexión a Internet, el servidor, la cantidad de datos transferidos y la calidad de la programación.
+
+
+2.	¿Cómo funciona AJAX en una página web? 
+AJAX funciona mediante una solicitud HTTP que se realiza desde javascript. La solicitud se procesa de manera asíncrona, lo que permite que el navegador continúe respondiendo mientras espera la información. El proceso general es el siguiente:
+
+•	Interacción del usuario: el usuario pulsa un botón, escribe en un campo de búsqueda o realiza otra acción Solicitud.
+•	Ejecución de javascript: el código detecta la acción y prepara una Envío de la solicitud: el navegador envía una petición HTTP al servidor mediante herramientas como fetch() o xmlhttprequest.
+•	Procesamiento del servidor: el servidor recibe la petición, realiza la operación correspondiente y prepara una respuesta. 
+•	Contenido. 
+•	Recepción de los datos: javascript recibe la respuesta y procesa su Actualización de la página: el código modifica la sección correspondiente del documento HTML sin recargar la página completa. La API Fetch es una alternativa moderna para realizar solicitudes de red desde javascript y procesar las respuestas del servidor (MDN Web Docs, s. F.-b). 
+•	Relación entre AJAX, javascript, el navegador y el servidor AJAX funciona mediante la colaboración de diferentes componentes de una aplicación web. Javascript: es el lenguaje que controla la operación. Detecta las acciones del usuario, 5 realiza las solicitudes, procesa los datos y actualiza el contenido de la página. Navegador: ejecuta javascript, muestra la página HTML y administra la comunicación HTTP. También permite que el usuario continúe interactuando con la interfaz mientras se espera una respuesta asíncrona. Servidor: recibe las solicitudes, procesa la información y devuelve una respuesta. Puede consultar una base de datos, validar información o acceder a otros recursos. HTML y DOM: HTML proporciona la estructura de la página. El DOM representa esa estructura como objetos que javascript puede modificar para mostrar los resultados. JSON o XML: son formatos que pueden utilizarse para organizar y transportar los datos entre el servidor y el navegador. En conjunto, estos componentes permiten que una aplicación actualice su contenido sin tener que cargar nuevamente el documento completo. La comunicación puede representarse de esta manera: Usuario → Navegador y javascript → Solicitud HTTP → Servidor → Respuesta → Actualización de la página. 5. Ventajas y desventajas del uso de AJAX 5.1. Ventajas 1. Mayor interactividad: la página puede responder a las acciones del usuario sin recargarse por completo. 2. 3. Actualización parcial: solamente se modifica el contenido necesario. Ahorro de transferencia: puede reducir la cantidad de información descargada en operaciones repetidas. 4. Mejor experiencia de uso: facilita las búsquedas y las validaciones 6 inmediatas. 5. Integración con servicios web: permite consumir API que proporcionan datos en formatos como JSON. 6. Compatibilidad con tecnologías modernas: puede utilizarse con javascript tradicional y con distintos frameworks. 5.2. Desventajas 
+
+•	Dependencia de javascript: si el código no funciona o está deshabilitado, algunas funciones pueden dejar de estar disponibles.
+•	Dependencia de la conexión: las solicitudes remotas necesitan una conexión funcional cuando se consulta un servidor externo. 
+•	Manejo de errores: es necesario controlar los tiempos de espera, las respuestas fallidas y los problemas de red. 
+•	Consideraciones de seguridad: deben protegerse los datos, validarse las solicitudes y evitarse la inserción insegura de contenido.
+•	Complejidad de programación: el manejo de operaciones asíncronas puede resultar difícil para principiantes.
+•	Accesibilidad e historial: si la aplicación actualiza la página sin administrar correctamente la navegación, puede dificultar el uso del botón Atrás o la identificación de cambios para tecnologías de asistencia. En conclusión, AJAX ofrece importantes beneficios, pero debe implementarse con buenas prácticas de programación, seguridad y accesibilidad. Usos actuales de AJAX AJAX se utiliza en diferentes tipos de aplicaciones web. Aunque el término se emplea. Menos que antes, la técnica continua presente en numerosas funciones que intercambian datos con servidores sin recargar toda la pagina
+ (MDN Web Docs, s. F.-a). 6.1. Formularios Permite enviar los datos de un formulario y mostrar una confirmación. Por ejemplo, un usuario puede registrar sus datos y recibir un mensaje indicando si la operación fue exitosa. 
+
+o	Búsquedas Se utiliza para obtener resultados mientras una persona escribe en un campo de búsqueda. La página puede solicitar coincidencias al servidor y mostrarlas dinámicamente. 6.3. Validaciones Permite comprobar información introducida por el usuario, como la disponibilidad de un nombre de usuario o si un correo ya está registrado. Las validaciones importantes también deben realizarse en el servidor, ya que las comprobaciones del navegador pueden modificarse o evitarse.
+o	Carga de datos Facilita la obtención de listas de productos, perfiles, comentarios, publicaciones y otros contenidos desde una API o un servidor. . Aplicaciones web dinámicas Se utiliza en paneles administrativos, sistemas de gestión académica, tiendas virtuales, redes sociales y aplicaciones que necesitan actualizar información frecuentemente. Por ejemplo, un sistema universitario puede consultar las calificaciones de un estudiante y mostrar los resultados en pantalla sin volver a cargar todo el sitio.  Diferencia entre una página web tradicional y una página que utiliza AJAX  Una página tradicional normalmente envía una solicitud y recibe un nuevo documento HTML para mostrarlo. En cambio, una página que utiliza AJAX puede solicitar solamente los datos necesarios y actualizar una parte de su contenido. Característica Actualización Solicitudes Interactividad Transferencia de datos Ejemplo Página tradicional Generalmente recarga el documento completo. Puede solicitar una página nueva al servidor. Depende de la implementación y navegación de la página. Puede descargar nuevamente HTML y otros recursos. Enviar un formulario y recibir una nueva página. Página con AJAX Puede actualizar una sección específica. Puede solicitar datos sin cambiar todo el documento. Facilita interacciones dinámicas. Puede transferir únicamente los datos necesarios. Enviar un formulario y mostrar el resultado en la misma pantalla. La diferencia fundamental está en la manera de actualizar el contenido. Una aplicación puede combinar ambos enfoques según sus necesidades. Además, utilizar AJAX no significa que una página nunca pueda recargarse. 
+
+
+
+
+
+
+
+7. Diferencia entre una página web tradicional y una página que utiliza AJAX 8 Una página tradicional normalmente envía una solicitud y recibe un nuevo documento HTML para mostrarlo. En cambio, una página que utiliza AJAX puede solicitar solamente los datos necesarios y actualizar una parte de su contenido. Característica Actualización Solicitudes Interactividad Transferencia de datos Ejemplo Página tradicional Generalmente recarga el documento completo. Puede solicitar una página nueva al servidor. Depende de la implementación y navegación de la página. Puede descargar nuevamente HTML y otros recursos. Enviar un formulario y recibir una nueva página. Página con AJAX Puede actualizar una sección específica. Puede solicitar datos sin cambiar todo el documento. Facilita interacciones dinámicas. Puede transferir únicamente los datos necesarios. Enviar un formulario y mostrar el resultado en la misma pantalla. La diferencia fundamental está en la manera de actualizar el contenido. Una aplicación puede combinar ambos enfoques según sus necesidades. Además, utilizar AJAX no significa que una página nunca pueda recargarse.
+
+Ejemplo sencillo del funcionamiento de AJAX
+8. Ejemplo sencillo del funcionamiento de AJAX
+8.1. Descripción del ejemplo
+Se creará una página que consulta información de un usuario mediante una API pública.
+
+Al pulsar un botón, JavaScript solicitará los datos y mostrará el nombre, el correo electrónico y la ciudad del usuario en la misma página.
+Para realizar la solicitud se utilizará fetch(), una herramienta moderna de JavaScript para obtener recursos de una red (MDN Web Docs, s. f.-b). 
+La API utilizada en este ejemplo es JSONPlaceholder, que ofrece datos de prueba para practicar solicitudes HTTP. 
+8.2. Código completo 
+Crea un archivo llamado index.html y copia el siguiente código: 
+
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Ejemplo de AJAX</title> 
+<style> 
+body { 
+font-family: Arial, sans-serif; 
+max-width: 600px; 
+margin: 40px auto; 
+padding: 20px; 
+background: #f2f5f9; 
+} 
+10 
+h1 { 
+color: #123c69; 
+} 
+button { 
+padding: 10px 16px; 
+background: #123c69; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+} 
+#resultado { 
+margin-top: 20px; 
+padding: 15px; 
+background: white; 
+border-radius: 5px; 
+} 
+</style> 
+</head> 
+<body> 
+11 
+<h1>Ejemplo de AJAX</h1> 
+<p> 
+Pulsa el botón para consultar los datos de un usuario 
+sin recargar la página. 
+</p> 
+<button id="cargar">Cargar usuario</button> 
+<div id="resultado" aria-live="polite"> 
+Aquí aparecerán los datos. 
+</div> 
+<script> 
+const boton = document.getElementById("cargar"); 
+const resultado = document.getElementById("resultado"); 
+boton.addEventListener("click", async function () { 
+resultado.textContent = "Cargando información..."; 
+boton.disabled = true; 
+try { 
+12 
+const respuesta = await fetch( 
+"https://jsonplaceholder.typicode.com/users/1" 
+); 
+if (!respuesta.ok) { 
+throw new Error("No se pudieron obtener los datos."); 
+} 
+const usuario = await respuesta.json(); 
+const nombre = document.createElement("p"); 
+nombre.textContent = "Nombre: " + usuario.name; 
+const correo = document.createElement("p"); 
+correo.textContent = "Correo: " + usuario.email; 
+const ciudad = document.createElement("p"); 
+ciudad.textContent = 
+"Ciudad: " + usuario.address.city; 
+resultado.replaceChildren( 
+nombre, 
+correo, 
+13 
+ciudad 
+); 
+} catch (error) { 
+resultado.textContent = 
+"Ocurrió un error. Comprueba tu conexión e inténtalo otra vez."; 
+} finally { 
+boton.disabled = false; 
+} 
+}); 
+</script> 
+</body> 
+</html>
+ Descripción del ejemplo Se creará una página que consulta información de un usuario mediante una API pública.
+ Al pulsar un botón, javascript solicitará los datos y mostrará el nombre, el correo electrónico y la ciudad del usuario en la misma página. Para realizar la solicitud se utilizará fetch(), una herramienta moderna de javascript para obtener recursos de una red (MDN Web Docs, s. F.-b). La API utilizada en este ejemplo es jsonplaceholder, que ofrece datos de prueba para practicar solicitudes HTTP. 
+1.2.	Código completo Crea un archivo llamado index.html y copia el siguiente código: 
+  Crear la estructura HTML. Se utiliza HTML para mostrar el título, el botón y el espacio        donde aparecerán los datos. 
+
+•	 Identificar los elementos. Javascript obtiene el botón y el área de resultados mediante getelementbyid(). 
+•	 Detectar la acción. El método addeventlistener() ejecuta una función cuando el usuario pulsa el botón.
+•	Enviar la solicitud. La instrucción fetch() consulta la dirección de la API. La 14 palabra await permite esperar el resultado sin bloquear toda la interfaz del navegador. 
+•	 Procesar la respuesta. El método respuesta.json() transforma el contenido JSON recibido en un objeto que javascript puede utilizar.
+•	 Mostrar los resultados. Se crean elementos de párrafo y se insertan en el área de resultados, sin recargar la página completa. 
+•	 Controlar los errores. Las instrucciones try, catch y finally permiten mostrar un mensaje si ocurre un problema y habilitar nuevamente el botón.
+
+Resultado esperado Al abrir la página y pulsar el botón Cargar usuario, aparecerán los datos del usuario de prueba que devuelve la API, incluyendo su nombre, correo electrónico y ciudad. 
+
+      El contenido inicial de la página se mantiene y solamente cambia el área de resultados. Para que el ejemplo funcione, se necesita conexión a Internet y acceso a la API; si la conexión falla, aparecerá el mensaje de error. Este ejemplo demuestra cómo AJAX permite solicitar información a un servidor y mostrarla dinámicamente. En este caso se utiliza JSON, en lugar de XML, para transportar los datos. Conclusión AJAX es una técnica importante eel desarrollo web porque permite intercambiar información entre el navegador y el servidor sin necesidad de recargar por completo una página. Su funcionamiento se apoya principalmente en javascript, las solicitudes HTTP y mecanismos que permiten procesar respuestas de forma asíncrona. 15 Entre sus beneficios se encuentran la actualización parcial del contenido, una interacción más fluida y la posibilidad de desarrollar funciones dinámicas como búsquedas, validaciones y carga de datos. Sin embargo, también requiere controlar los errores, proteger la información y considerar la accesibilidad de la aplicación. En la actualidad, la API Fetch y el formato JSON son herramientas habituales para implementar esta técnica. El ejemplo desarrollado demuestra que es posible consultar información de un servidor y mostrarla en una página web sin interrumpir la experiencia del usuario. En definitiva, comprender AJAX proporciona una base útil para estudiar el desarrollo de aplicaciones web modernas, el consumo de API y la comunicación entre el cliente y el servidor. 
+
+•	Referencias bibliográficas MDN Web Docs. (s. F.-a). AJAX. Https://developer.mozilla.org/en-US/docs/Glossary/AJAX MDN Web Docs. (s. F.-b). Fetch API. Https://developer.mozilla.org/en US/docs/Web/API/Fetch_API MDN Web Docs. (s. F.-c). Making network requests with javascript. Https://developer.mozilla.org/en US/docs/Learn_web_development/Core/Scripting/Network_requests jsonplaceholder. (s. F.). Jsonplaceholder: Free fake REST API. https://jsonplaceholder.typicode.c
+
+UNIVERSIDAD AUTÓNOMA DE SANTO DOMINGO (UASD)
+Facultad: Ciencias
+Escuela: Informática
+Carrera: Licenciatura en Informática
+TAREA 3: INVESTIGACIÓN SOBRE AJAX Y SU FUNCIONAMIENTO
+Asignatura: Laboratorio de Lenguaje de Programación III
+Docente: Radhamés Silverio González
+Estudiante: Bienvenido Quezada Alcántara
+Matrícula: BD6436
+Lugar: Santo Domingo, República Dominicana
+Fecha: 24 de octubre de 2026
+
+
+
+Introducción:
+El desarrollo web ha evolucionado considerablemente gracias a las tecnologías que 
+Permiten crear páginas más rápidas, interactivas y fáciles de utilizar. 
+Entre estas tecnologías se Encuentra AJAX, una técnica de programación que permite
+intercambiar información entre una Página web y un servidor sin necesidad
+de recargar el documento completo. 
+AJAX ha contribuido al desarrollo de aplicaciones web modernas porque facilita la 
+Actualización de contenidos, la búsqueda de información, la validación de formularios y la carga 
+Dinámica de datos. Aunque su nombre hace referencia a XML, actualmente es común utilizar 
+JSON como formato de intercambio de información. 
+El objetivo de esta investigación es explicar qué es AJAX, cuál es su propósito, cómo 
+Funciona, qué relación tiene con javascript, el navegador y el servidor, así como sus ventajas, Desventajas y principales aplicaciones. También se presenta un ejemplo practico que permite comprender su funcionamiento.
+. 
+                   Desarrollo :
+1.	¿Qué es AJAX? 
+AJAX significa Asynchronous javascript and XML, que en español se traduce como Javascript asíncrono y XML. Es una técnica de desarrollo web que permite a una pagina  solicitar y recibir información de un servidor de asíncrona, actualizando una parte de su contenido sin tener que recargar toda la pagina  (MDN Web Docs, s. F.-a). AJAX no es un lenguaje de programación independiente ni un programa que se instala. Es una técnica que combina tecnología web, principalmente HTML, CSC, javascript y mecanismo de comunicación mediante HTTP Aunque inicialmente Aunque inicialmente se utilizaba XML para inter para intercambiar información, hoy en día 3 también se emplean formatos como JSON y texto. Por esa razón, el nombre AJAX se mantiene, aunque no siempre se utiliza XML. . Por ejemplo, cuando una página muestra los datos de un usuario después de pulsar un botón, sin volver a cargar todo el sitio, puede estar utilizando AJAX.
+
+1.	¿Cuál es el propósito de AJAX? El propósito principal de AJAX es mejorar la interacción entre el usuario y una aplicación web, permitiendo que la información se solicite al servidor y se muestre cuando sea necesaria, sin recargar el documento completo. Sus objetivos principales son:
+
+o	Mejorar la experiencia del usuario: permite interactuar con la página de forma más fluida.
+o	Actualizar partes específicas: modifica solamente el contenido que necesita cambiar.
+•	Reducir transferencias innecesarias: puede evitar que se descargue nuevamente toda la página en cada operación. 
+•	Facilitar la comunicación con el servidor: permite solicitar, enviar y recibir información. 
+•	Crear aplicaciones dinámicas: facilita funciones como búsquedas, notificaciones, formularios y listas de resultados. Sin embargo, AJAX no garantiza que todas las aplicaciones sean más rápidas. 
+•	El resultado depende de la conexión a Internet, el servidor, la cantidad de datos transferidos y la calidad de la programación.
+
+
+2.	¿Cómo funciona AJAX en una página web? 
+AJAX funciona mediante una solicitud HTTP que se realiza desde javascript. La solicitud se procesa de manera asíncrona, lo que permite que el navegador continúe respondiendo mientras espera la información. El proceso general es el siguiente:
+
+•	Interacción del usuario: el usuario pulsa un botón, escribe en un campo de búsqueda o realiza otra acción Solicitud.
+•	Ejecución de javascript: el código detecta la acción y prepara una Envío de la solicitud: el navegador envía una petición HTTP al servidor mediante herramientas como fetch() o xmlhttprequest.
+•	Procesamiento del servidor: el servidor recibe la petición, realiza la operación correspondiente y prepara una respuesta. 
+•	Contenido. 
+•	Recepción de los datos: javascript recibe la respuesta y procesa su Actualización de la página: el código modifica la sección correspondiente del documento HTML sin recargar la página completa. La API Fetch es una alternativa moderna para realizar solicitudes de red desde javascript y procesar las respuestas del servidor (MDN Web Docs, s. F.-b). 
+•	Relación entre AJAX, javascript, el navegador y el servidor AJAX funciona mediante la colaboración de diferentes componentes de una aplicación web. Javascript: es el lenguaje que controla la operación. Detecta las acciones del usuario, 5 realiza las solicitudes, procesa los datos y actualiza el contenido de la página. Navegador: ejecuta javascript, muestra la página HTML y administra la comunicación HTTP. También permite que el usuario continúe interactuando con la interfaz mientras se espera una respuesta asíncrona. Servidor: recibe las solicitudes, procesa la información y devuelve una respuesta. Puede consultar una base de datos, validar información o acceder a otros recursos. HTML y DOM: HTML proporciona la estructura de la página. El DOM representa esa estructura como objetos que javascript puede modificar para mostrar los resultados. JSON o XML: son formatos que pueden utilizarse para organizar y transportar los datos entre el servidor y el navegador. En conjunto, estos componentes permiten que una aplicación actualice su contenido sin tener que cargar nuevamente el documento completo. La comunicación puede representarse de esta manera: Usuario → Navegador y javascript → Solicitud HTTP → Servidor → Respuesta → Actualización de la página. 5. Ventajas y desventajas del uso de AJAX 5.1. Ventajas 1. Mayor interactividad: la página puede responder a las acciones del usuario sin recargarse por completo. 2. 3. Actualización parcial: solamente se modifica el contenido necesario. Ahorro de transferencia: puede reducir la cantidad de información descargada en operaciones repetidas. 4. Mejor experiencia de uso: facilita las búsquedas y las validaciones 6 inmediatas. 5. Integración con servicios web: permite consumir API que proporcionan datos en formatos como JSON. 6. Compatibilidad con tecnologías modernas: puede utilizarse con javascript tradicional y con distintos frameworks. 5.2. Desventajas 
+
+•	Dependencia de javascript: si el código no funciona o está deshabilitado, algunas funciones pueden dejar de estar disponibles.
+•	Dependencia de la conexión: las solicitudes remotas necesitan una conexión funcional cuando se consulta un servidor externo. 
+•	Manejo de errores: es necesario controlar los tiempos de espera, las respuestas fallidas y los problemas de red. 
+•	Consideraciones de seguridad: deben protegerse los datos, validarse las solicitudes y evitarse la inserción insegura de contenido.
+•	Complejidad de programación: el manejo de operaciones asíncronas puede resultar difícil para principiantes.
+•	Accesibilidad e historial: si la aplicación actualiza la página sin administrar correctamente la navegación, puede dificultar el uso del botón Atrás o la identificación de cambios para tecnologías de asistencia. En conclusión, AJAX ofrece importantes beneficios, pero debe implementarse con buenas prácticas de programación, seguridad y accesibilidad. Usos actuales de AJAX AJAX se utiliza en diferentes tipos de aplicaciones web. Aunque el término se emplea. Menos que antes, la técnica continua presente en numerosas funciones que intercambian datos con servidores sin recargar toda la pagina
+ (MDN Web Docs, s. F.-a). 6.1. Formularios Permite enviar los datos de un formulario y mostrar una confirmación. Por ejemplo, un usuario puede registrar sus datos y recibir un mensaje indicando si la operación fue exitosa. 
+
+o	Búsquedas Se utiliza para obtener resultados mientras una persona escribe en un campo de búsqueda. La página puede solicitar coincidencias al servidor y mostrarlas dinámicamente. 6.3. Validaciones Permite comprobar información introducida por el usuario, como la disponibilidad de un nombre de usuario o si un correo ya está registrado. Las validaciones importantes también deben realizarse en el servidor, ya que las comprobaciones del navegador pueden modificarse o evitarse.
+o	Carga de datos Facilita la obtención de listas de productos, perfiles, comentarios, publicaciones y otros contenidos desde una API o un servidor. . Aplicaciones web dinámicas Se utiliza en paneles administrativos, sistemas de gestión académica, tiendas virtuales, redes sociales y aplicaciones que necesitan actualizar información frecuentemente. Por ejemplo, un sistema universitario puede consultar las calificaciones de un estudiante y mostrar los resultados en pantalla sin volver a cargar todo el sitio.  Diferencia entre una página web tradicional y una página que utiliza AJAX  Una página tradicional normalmente envía una solicitud y recibe un nuevo documento HTML para mostrarlo. En cambio, una página que utiliza AJAX puede solicitar solamente los datos necesarios y actualizar una parte de su contenido. Característica Actualización Solicitudes Interactividad Transferencia de datos Ejemplo Página tradicional Generalmente recarga el documento completo. Puede solicitar una página nueva al servidor. Depende de la implementación y navegación de la página. Puede descargar nuevamente HTML y otros recursos. Enviar un formulario y recibir una nueva página. Página con AJAX Puede actualizar una sección específica. Puede solicitar datos sin cambiar todo el documento. Facilita interacciones dinámicas. Puede transferir únicamente los datos necesarios. Enviar un formulario y mostrar el resultado en la misma pantalla. La diferencia fundamental está en la manera de actualizar el contenido. Una aplicación puede combinar ambos enfoques según sus necesidades. Además, utilizar AJAX no significa que una página nunca pueda recargarse. 
+
+
+
+
+
+
+
+7. Diferencia entre una página web tradicional y una página que utiliza AJAX 8 Una página tradicional normalmente envía una solicitud y recibe un nuevo documento HTML para mostrarlo. En cambio, una página que utiliza AJAX puede solicitar solamente los datos necesarios y actualizar una parte de su contenido. Característica Actualización Solicitudes Interactividad Transferencia de datos Ejemplo Página tradicional Generalmente recarga el documento completo. Puede solicitar una página nueva al servidor. Depende de la implementación y navegación de la página. Puede descargar nuevamente HTML y otros recursos. Enviar un formulario y recibir una nueva página. Página con AJAX Puede actualizar una sección específica. Puede solicitar datos sin cambiar todo el documento. Facilita interacciones dinámicas. Puede transferir únicamente los datos necesarios. Enviar un formulario y mostrar el resultado en la misma pantalla. La diferencia fundamental está en la manera de actualizar el contenido. Una aplicación puede combinar ambos enfoques según sus necesidades. Además, utilizar AJAX no significa que una página nunca pueda recargarse.
+
+Ejemplo sencillo del funcionamiento de AJAX
+8. Ejemplo sencillo del funcionamiento de AJAX
+8.1. Descripción del ejemplo
+Se creará una página que consulta información de un usuario mediante una API pública.
+
+Al pulsar un botón, JavaScript solicitará los datos y mostrará el nombre, el correo electrónico y la ciudad del usuario en la misma página.
+Para realizar la solicitud se utilizará fetch(), una herramienta moderna de JavaScript para obtener recursos de una red (MDN Web Docs, s. f.-b). 
+La API utilizada en este ejemplo es JSONPlaceholder, que ofrece datos de prueba para practicar solicitudes HTTP. 
+8.2. Código completo 
+Crea un archivo llamado index.html y copia el siguiente código: 
+
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Ejemplo de AJAX</title> 
+<style> 
+body { 
+font-family: Arial, sans-serif; 
+max-width: 600px; 
+margin: 40px auto; 
+padding: 20px; 
+background: #f2f5f9; 
+} 
+10 
+h1 { 
+color: #123c69; 
+} 
+button { 
+padding: 10px 16px; 
+background: #123c69; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+} 
+#resultado { 
+margin-top: 20px; 
+padding: 15px; 
+background: white; 
+border-radius: 5px; 
+} 
+</style> 
+</head> 
+<body> 
+11 
+<h1>Ejemplo de AJAX</h1> 
+<p> 
+Pulsa el botón para consultar los datos de un usuario 
+sin recargar la página. 
+</p> 
+<button id="cargar">Cargar usuario</button> 
+<div id="resultado" aria-live="polite"> 
+Aquí aparecerán los datos. 
+</div> 
+<script> 
+const boton = document.getElementById("cargar"); 
+const resultado = document.getElementById("resultado"); 
+boton.addEventListener("click", async function () { 
+resultado.textContent = "Cargando información..."; 
+boton.disabled = true; 
+try { 
+12 
+const respuesta = await fetch( 
+"https://jsonplaceholder.typicode.com/users/1" 
+); 
+if (!respuesta.ok) { 
+throw new Error("No se pudieron obtener los datos."); 
+} 
+const usuario = await respuesta.json(); 
+const nombre = document.createElement("p"); 
+nombre.textContent = "Nombre: " + usuario.name; 
+const correo = document.createElement("p"); 
+correo.textContent = "Correo: " + usuario.email; 
+const ciudad = document.createElement("p"); 
+ciudad.textContent = 
+"Ciudad: " + usuario.address.city; 
+resultado.replaceChildren( 
+nombre, 
+correo, 
+13 
+ciudad 
+); 
+} catch (error) { 
+resultado.textContent = 
+"Ocurrió un error. Comprueba tu conexión e inténtalo otra vez."; 
+} finally { 
+boton.disabled = false; 
+} 
+}); 
+</script> 
+</body> 
+</html>
+ Descripción del ejemplo Se creará una página que consulta información de un usuario mediante una API pública.
+ Al pulsar un botón, javascript solicitará los datos y mostrará el nombre, el correo electrónico y la ciudad del usuario en la misma página. Para realizar la solicitud se utilizará fetch(), una herramienta moderna de javascript para obtener recursos de una red (MDN Web Docs, s. F.-b). La API utilizada en este ejemplo es jsonplaceholder, que ofrece datos de prueba para practicar solicitudes HTTP. 
+1.2.	Código completo Crea un archivo llamado index.html y copia el siguiente código: 
+  Crear la estructura HTML. Se utiliza HTML para mostrar el título, el botón y el espacio        donde aparecerán los datos. 
+
+•	 Identificar los elementos. Javascript obtiene el botón y el área de resultados mediante getelementbyid(). 
+•	 Detectar la acción. El método addeventlistener() ejecuta una función cuando el usuario pulsa el botón.
+•	Enviar la solicitud. La instrucción fetch() consulta la dirección de la API. La 14 palabra await permite esperar el resultado sin bloquear toda la interfaz del navegador. 
+•	 Procesar la respuesta. El método respuesta.json() transforma el contenido JSON recibido en un objeto que javascript puede utilizar.
+•	 Mostrar los resultados. Se crean elementos de párrafo y se insertan en el área de resultados, sin recargar la página completa. 
+•	 Controlar los errores. Las instrucciones try, catch y finally permiten mostrar un mensaje si ocurre un problema y habilitar nuevamente el botón.
+
+Resultado esperado Al abrir la página y pulsar el botón Cargar usuario, aparecerán los datos del usuario de prueba que devuelve la API, incluyendo su nombre, correo electrónico y ciudad. 
+
+      El contenido inicial de la página se mantiene y solamente cambia el área de resultados. Para que el ejemplo funcione, se necesita conexión a Internet y acceso a la API; si la conexión falla, aparecerá el mensaje de error. Este ejemplo demuestra cómo AJAX permite solicitar información a un servidor y mostrarla dinámicamente. En este caso se utiliza JSON, en lugar de XML, para transportar los datos. Conclusión AJAX es una técnica importante eel desarrollo web porque permite intercambiar información entre el navegador y el servidor sin necesidad de recargar por completo una página. Su funcionamiento se apoya principalmente en javascript, las solicitudes HTTP y mecanismos que permiten procesar respuestas de forma asíncrona. 15 Entre sus beneficios se encuentran la actualización parcial del contenido, una interacción más fluida y la posibilidad de desarrollar funciones dinámicas como búsquedas, validaciones y carga de datos. Sin embargo, también requiere controlar los errores, proteger la información y considerar la accesibilidad de la aplicación. En la actualidad, la API Fetch y el formato JSON son herramientas habituales para implementar esta técnica. El ejemplo desarrollado demuestra que es posible consultar información de un servidor y mostrarla en una página web sin interrumpir la experiencia del usuario. En definitiva, comprender AJAX proporciona una base útil para estudiar el desarrollo de aplicaciones web modernas, el consumo de API y la comunicación entre el cliente y el servidor. 
+
+•	Referencias bibliográficas MDN Web Docs. (s. F.-a). AJAX. Https://developer.mozilla.org/en-US/docs/Glossary/AJAX MDN Web Docs. (s. F.-b). Fetch API. Https://developer.mozilla.org/en US/docs/Web/API/Fetch_API MDN Web Docs. (s. F.-c). Making network requests with javascript. Https://developer.mozilla.org/en US/docs/Learn_web_development/Core/Scripting/Network_requests jsonplaceholder. (s. F.). Jsonplaceholder: Free fake REST API. https://jsonplaceholder.typicode.c
